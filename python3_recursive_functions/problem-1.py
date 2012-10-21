@@ -6,11 +6,12 @@ def showFactorsRecursively(n):
   """
   (int) -> list()
   show the factors of a number.
+
+  This function should be recursive, but I am not sure
+  how to make it recursive and get the results I am 
+  looking for.
   """
-  for x in range(1,n+1):
-    if(x % n == 0):
-      return [x] + showFactorsRecursively(n-1)
-  return [n]
+  return [x for x in range(1,n+1) if n % x == 0]
 
 
 def showFactors(n):
