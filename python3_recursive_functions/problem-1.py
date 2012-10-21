@@ -15,7 +15,7 @@ def primes(n):
   generate a list of prime numbers.
   start with a bottom bounds and a top bounds
   """
-  r = list(range(0,n+1))
+  r = [i if i%2 != 0 else 0 for i in list(range(0,n+1)) ]
   r[1] = 0
   bottom = 2
   top = n
