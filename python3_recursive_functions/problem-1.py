@@ -7,7 +7,7 @@ def showFactors(n):
   (int) -> list()
   show the factors of a number.
   """
-  return 0 
+  return [x for x in [1] + primes(n) if n%x == 0]
 
 def primes(n):
   """
@@ -17,6 +17,7 @@ def primes(n):
   """
   r = [i if i%2 != 0 else 0 for i in list(range(0,n+1)) ]
   r[1] = 0
+  r[2] = 2
   bottom = 2
   top = n
   while(bottom * bottom <= top):
@@ -29,3 +30,4 @@ def primes(n):
   return [x for x in r if x]
 
 print(primes(100))
+print(showFactors(10275))
