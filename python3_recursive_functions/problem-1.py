@@ -2,6 +2,17 @@
 Think of a recusive version of the function f(n) = 3 * n, i.e. the multiples of 3
 """
 
+def showFactorsRecursively(n):
+  """
+  (int) -> list()
+  show the factors of a number.
+  """
+  for x in range(1,n+1):
+    if(x % n == 0):
+      return [x] + showFactorsRecursively(n-1)
+  return [n]
+
+
 def showFactors(n):
   """
   (int) -> list()
@@ -30,4 +41,5 @@ def primes(n):
   return [x for x in r if x]
 
 print(primes(100))
-print(showFactors(10275))
+print(showFactors(100))
+print(showFactorsRecursively(100))
