@@ -2,6 +2,26 @@
 Think of a recusive version of the function f(n) = 3 * n, i.e. the multiples of 3
 """
 
+def showAllFactorsRecursively(n):
+  """
+  (int) -> list()
+  show the factors of all numbers.
+  """
+  out = [x for x in range(1,n+1) if n % x == 0]
+
+  if( not hasattr(showAllFactorsRecursively, 'factors') ):
+    showAllFactorsRecursively.factors = []
+
+  if( not hasattr(showAllFactorsRecursively, 'originals') ):
+    showAllFactorsRecursively.originals = out
+
+  if(out[-1] == 1):
+    return showAllFactorsRecursively.factors
+
+  showAllFactorsRecursively.factors.append(out)
+
+  return showAllFactorsRecursively( showAllFactorsRecursively.originals.pop() )
+
 def showFactorsRecursively(n):
   """
   (int) -> list()
@@ -44,3 +64,4 @@ def primes(n):
 print(primes(100))
 print(showFactors(100))
 print(showFactorsRecursively(100))
+print(showAllFactorsRecursively(100))
